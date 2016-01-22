@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HOME</title>
+</head>
+<body>
+	<h1>IRONBLOG</h1>
+
+	<ul>
+		<% @blog.each do |post| %>
+			<% if post.sponsored == true %>
+				<li><a href="/post_details/<%= @blog.index(post) %>">******<%= post.title %>******</a></li>
+			<% else %>
+			<li><a href="/post_details/<%= @blog.index(post) %>"><%= post.title %></a></li>
+			<% end %>
+		<% end %>
+	</ul>
+
+	<h3><a href="/new_post">Create a New Post</a></h3>
+</body>
+</html>
